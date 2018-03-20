@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
 export default class Login extends Component {
+
+    static navigationOptions = {
+        title: 'Login'
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -12,10 +18,10 @@ export default class Login extends Component {
                     <Text style={styles.title}>An app made for OkeJek using React Native.</Text>
                 </View>
                 <View style={styles.formContainer}>
-                    <TouchableOpacity style={styles.buttonContainer}>
+                    <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('Login')}>
                         <Text style={styles.buttonText}>MASUK</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonContainer}>
+                    <TouchableOpacity style={styles.buttonContainer} onPress={() => this.props.navigation.navigate('Register')}>
                         <Text style={styles.buttonText}>DAFTAR</Text>
                     </TouchableOpacity>
                 </View>
